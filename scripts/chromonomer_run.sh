@@ -11,7 +11,7 @@ cd ${HOME_DIR}
 mkdir 20150603
 
 # Run chromonomer
-chromonomer -p ~/research/20150603_linkage_map.tsv \
+${HOME_DIR}/images/chromonomer -p ~/research/20150603_linkage_map.tsv \
     -o ~/research/20150603/ -s ~/research/markers.sam \
     -a ~/research/final.assembly.agp --data_version 20150603
 
@@ -19,10 +19,10 @@ chromonomer -p ~/research/20150603_linkage_map.tsv \
 export SINGULARITY_BINDPATH=${HOME_DIR}/20150603:/usr/local/share/chromonomer/php/20150603
 
 # Start Apache
-./apache_ctrl.sh start
+${HOME_DIR}/scripts/apache_ctrl.sh start
 
 # Visualize with local browser via SSH tunnel
 
 # Stop Apache
-./apache_ctrl.sh stop
+${HOME_DIR}/scripts/apache_ctrl.sh stop
 

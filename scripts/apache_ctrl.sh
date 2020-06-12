@@ -5,7 +5,7 @@ module load singularity
 
 export HOME_DIR="$( dirname $(realpath $0) )/.."
 export SINGULARITYENV_PORT=$(shuf -i8000-9999 -n1)
-export SINGULARITY_BINDPATH=/bigdata,/bigdata/operations/opt/linux:/opt/linux,$SINGULARITY_BINDPATH
+export SINGULARITY_BINDPATH=/bigdata,/bigdata/operations/pkgadmin/opt/linux:/opt/linux,$SINGULARITY_BINDPATH
 SCRIPT_NAME=$(basename $0)
 export GROUP=users
 
