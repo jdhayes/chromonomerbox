@@ -48,20 +48,23 @@ Consider adding the above export line to your `~/.bashrc` file to make this perm
 Create work directory and set mount points:
 
 ```
+module load singularity
 cd /path/to/chromonomerbox
 mkdir 20150603
-export SINGULARITY_BINDPATH=${PWD}/20150603:/usr/local/share/chromonomer/php/20150603
+export SINGULARITY_BINDPATH=${PWD}/20150603:/usr/local/share/chromonomer/php/20150603,$SINGULARITY_BINDPATH
 ```
 
 ### Run Analysis
 
-This example came directly from chromonomer website:
+This example came directly from chromonomer website [Chromonomer Usage](http://catchenlab.life.illinois.edu/chromonomer/manual/#exec):
 
 ```bash
 chromonomer -p ~/research/20150603_linkage_map.tsv \
     -o ~/research/20150603/ -s ~/research/markers.sam \
     -a ~/research/final.assembly.agp --data_version 20150603
 ```
+
+Example data can be downloaded from [here](https://creskolab.uoregon.edu/pipefish/).
 
 ### View Web
 
